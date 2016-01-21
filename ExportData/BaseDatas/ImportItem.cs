@@ -389,6 +389,7 @@ namespace Dothan.ExportData
                 OrderRow data = orderService.GetOrderRow(reader);
                 orderTable.Add(data);
                 callback.CurrentIndex++;
+                callback.ValidIndex++;
             }
 
             orderTable.Close();
@@ -416,6 +417,7 @@ namespace Dothan.ExportData
                 TradeRow data = tradeService.GetTradeRow(reader);
                 tradeTable.Add(data);
                 callback.CurrentIndex++;
+                callback.ValidIndex++;
             }
 
             tradeTable.Close();

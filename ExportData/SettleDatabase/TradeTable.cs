@@ -112,7 +112,7 @@ namespace Dothan.ExportData
         /// <param name="date">操作的目标日期，日期格式为：yyyyMMdd,eg：20151225</param>
         public int RemoveByDate(string date)
         {
-            string sql = string.Format("DELETE FROM {0} WHERE {1} = '{2}'", T_TableName, TradeRow.C_trade_date, date);
+            string sql = string.Format("DELETE FROM {0} WHERE {1} = '{3}' OR {2} = {3}", T_TableName, TradeRow.C_trade_date, TradeRow.C_sys_trade_date, date);
 
             return this.ExecuteNonQuery(sql);
         }

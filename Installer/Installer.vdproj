@@ -153,6 +153,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B262690EDCCDFE54E0DC0ED6C9FBBE06"
+        "OwnerKey" = "8:_3FFE9B2F6064DED6B052EB3940DB3962"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B262690EDCCDFE54E0DC0ED6C9FBBE06"
+        "OwnerKey" = "8:_FC0D5A211BA64EBE9583FBA448E9B0E4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B262690EDCCDFE54E0DC0ED6C9FBBE06"
+        "OwnerKey" = "8:_886D553755334401AFD5D73608388742"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C89D4AF1FAEB3A18532BB1BF90D54F70"
         "OwnerKey" = "8:_E0604C8F832EC5F06B8876847464FD7F"
         "MsmSig" = "8:_UNDEFINED"
@@ -178,12 +196,6 @@
         "Entry"
         {
         "MsmKey" = "8:_C94564BDC953F711F1E8E3F8B6E7973A"
-        "OwnerKey" = "8:_3FFE9B2F6064DED6B052EB3940DB3962"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C94564BDC953F711F1E8E3F8B6E7973A"
         "OwnerKey" = "8:_E0604C8F832EC5F06B8876847464FD7F"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -197,6 +209,12 @@
         {
         "MsmKey" = "8:_C94564BDC953F711F1E8E3F8B6E7973A"
         "OwnerKey" = "8:_886D553755334401AFD5D73608388742"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C94564BDC953F711F1E8E3F8B6E7973A"
+        "OwnerKey" = "8:_3FFE9B2F6064DED6B052EB3940DB3962"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -249,24 +267,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F14D0C202C6734F2ECBF083A833834A1"
-        "OwnerKey" = "8:_3FFE9B2F6064DED6B052EB3940DB3962"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F14D0C202C6734F2ECBF083A833834A1"
-        "OwnerKey" = "8:_FC0D5A211BA64EBE9583FBA448E9B0E4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F14D0C202C6734F2ECBF083A833834A1"
-        "OwnerKey" = "8:_886D553755334401AFD5D73608388742"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_FC0D5A211BA64EBE9583FBA448E9B0E4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -280,6 +280,18 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_09104F7BC3985F98B7983E20A304AAC2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_886D553755334401AFD5D73608388742"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_3FFE9B2F6064DED6B052EB3940DB3962"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -287,6 +299,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8E26AE85111772A9A321D7D661681CFA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B262690EDCCDFE54E0DC0ED6C9FBBE06"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3544C7B44B884752AF544BD85055AB70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -305,30 +329,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E0604C8F832EC5F06B8876847464FD7F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_09104F7BC3985F98B7983E20A304AAC2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_886D553755334401AFD5D73608388742"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F14D0C202C6734F2ECBF083A833834A1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3544C7B44B884752AF544BD85055AB70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -538,11 +538,6 @@
             "AssemblyAsmDisplayName" = "8:ExportData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3FFE9B2F6064DED6B052EB3940DB3962"
-                    {
-                    "Name" = "8:ExportData.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:ExportData.dll"
             "TargetName" = "8:"
@@ -569,11 +564,6 @@
             "AssemblyAsmDisplayName" = "8:ProjectInfo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4BFD09E7CA8655FFB00DA9E2131B3217"
-                    {
-                    "Name" = "8:ProjectInfo.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:ProjectInfo.dll"
             "TargetName" = "8:"
@@ -651,11 +641,6 @@
             "AssemblyAsmDisplayName" = "8:DzControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_69D6554855146EAD507F78E86097EA16"
-                    {
-                    "Name" = "8:DzControl.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:DzControl.dll"
             "TargetName" = "8:"
@@ -722,11 +707,6 @@
             "AssemblyAsmDisplayName" = "8:SettleSysCoding, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8E26AE85111772A9A321D7D661681CFA"
-                    {
-                    "Name" = "8:SettleSysCoding.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:SettleSysCoding.dll"
             "TargetName" = "8:"
@@ -815,6 +795,32 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B262690EDCCDFE54E0DC0ED6C9FBBE06"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:log4net.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C83FCE9266AB4FB68A7B9F2BD30BD971"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C89D4AF1FAEB3A18532BB1BF90D54F70"
@@ -906,11 +912,6 @@
             "AssemblyAsmDisplayName" = "8:DzHelpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E0604C8F832EC5F06B8876847464FD7F"
-                    {
-                    "Name" = "8:DzHelpers.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:DzHelpers.dll"
             "TargetName" = "8:"
@@ -948,37 +949,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F14D0C202C6734F2ECBF083A833834A1"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_F14D0C202C6734F2ECBF083A833834A1"
-                    {
-                    "Name" = "8:log4net.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:log4net.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_C83FCE9266AB4FB68A7B9F2BD30BD971"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
         }
@@ -1081,15 +1051,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ExportManager"
-        "ProductCode" = "8:{28FA5818-98B9-4A1A-A179-2283B8ECF23E}"
-        "PackageCode" = "8:{E9BBDC1A-2417-4F7B-ABA1-FF943C42F36C}"
+        "ProductCode" = "8:{9B8ADBC1-949D-42A9-88CD-A1180EA0F35B}"
+        "PackageCode" = "8:{6CAF8EFA-A56F-4F3E-9234-B4B79632F1F0}"
         "UpgradeCode" = "8:{FF1D2563-820A-4AE5-B73A-83A77A648009}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.7"
+        "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:qlzg"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1205,7 +1175,7 @@
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_26543AC35A67435BAB1424B0EBA71E3B"
             {
             "Name" = "8:UnInstall.exe"
-            "Arguments" = "8:/x {28FA5818-98B9-4A1A-A179-2283B8ECF23E}"
+            "Arguments" = "8:/x {9B8ADBC1-949D-42A9-88CD-A1180EA0F35B}"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
