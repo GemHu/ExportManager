@@ -1,0 +1,19 @@
+TableName: BondFuturesEODPriceRow
+TableComment: 中国国债期货仿真交易日行情。
+PropertyNameMode: System
+
+01	|	OBJECT_ID		|	varchar(100) 	|	对象ID			|
+02	|	S_INFO_WINDCODE	|	varchar(40) 	|	Wind代码		|
+03	|	TRADE_DT		|	varchar(8) 		|	交易日期		|
+04	|	S_DQ_PRESETTLE	|	numeric(20,4) 	|	前结算价(元)	|
+05	|	S_DQ_OPEN		|	numeric(20,4) 	|	开盘价(元)		|
+06	|	S_DQ_HIGH		|	numeric(20,4) 	|	最高价(元)		|
+07	|	S_DQ_LOW		|	numeric(20,4) 	|	最低价(元)		|
+08	|	S_DQ_CLOSE		|	numeric(20,4) 	|	收盘价(元)		|
+09	|	S_DQ_SETTLE		|	numeric(20,4) 	|	结算价(元)		|
+10	|	S_DQ_VOLUME		|	numeric(20,4) 	|	成交量(手)		|
+11	|	S_DQ_AMOUNT		|	numeric(20,4) 	|	成交金额(万元)	|
+12	|	S_DQ_OI			|	numeric(20,4) 	|	持仓量(手)		|
+13	|	S_DQ_CHANGE		|	numeric(20,4) 	|	涨跌(元)		|	收盘价-前结算价
+14	|	OPDATE			|	datetime 		|	操作时间		|
+15	|	OPMODE			|	varchar(1) 		|	操作模式		|	0（新记录）、1（更新/更正）、2（删除），描述对数据库需要进行的操作。对于0和1，记录内容即为最新值；对于2，所有字段内容为空。

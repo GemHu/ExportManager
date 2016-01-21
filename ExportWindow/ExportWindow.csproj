@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2036D6FE-66E8-41C1-BD33-F3D779315556}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dothan.ExportWindow</RootNamespace>
+    <AssemblyName>ExportWindow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ExportWindow.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RibbonControlsLibrary" />
+    <Reference Include="Microsoft.Windows.Shell" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Export.cs" />
+    <Compile Include="ViewModule\DBFQueryModule.cs" />
+    <Compile Include="Views\OptionsWindow.xaml.cs">
+      <DependentUpon>OptionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UcDataAcquisition.xaml.cs">
+      <DependentUpon>UcDataAcquisition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UcDataTableViewer.xaml.cs">
+      <DependentUpon>UcDataTableViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UcDbfList.xaml.cs">
+      <DependentUpon>UcDbfList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UcDBFQuery.xaml.cs">
+      <DependentUpon>UcDBFQuery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UcImportList.xaml.cs">
+      <DependentUpon>UcImportList.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.Command.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LargeIcon.png" />
+    <Resource Include="Images\SmallIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DzControl\DzControl.csproj">
+      <Project>{1D690368-D10A-4E32-A3C9-0FFB8012F123}</Project>
+      <Name>DzControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DzHelpers\DzHelpers.csproj">
+      <Project>{7F6BF401-DCF1-4E33-9BAB-312C3B1A0A83}</Project>
+      <Name>DzHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExportData\ExportData.csproj">
+      <Project>{ABF2F144-08E5-4837-9D63-33FF050EE8C5}</Project>
+      <Name>ExportData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="SplashScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OptionsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UcDataAcquisition.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UcDataTableViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UcDbfList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UcDBFQuery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UcImportList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ExportWindow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DBFManager.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\file_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\help_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon_Database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_dbf_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Refresh_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menu_options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_DataQuery_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Large_Import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Large_Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Large_Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_NextFolder_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_NextFolder_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_OK_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_OK_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_PrevFolder_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_PrevFolder_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Refresh_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Small_Import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_StopImport_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Text_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Timer_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Timer_Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OK.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_ExportCmd_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuIcon_Clear_Large.png" />
+    <Resource Include="Images\MenuIcon_Clear_Small.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

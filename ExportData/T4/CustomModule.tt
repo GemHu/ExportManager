@@ -1,0 +1,73 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System"#> 
+<#@ output extension=".cs" #>
+<#@ include file="TxtTableFactory.ttinclude" #>
+<#@ include file="MultipleOutputHelper.ttinclude" #>
+<# 
+	ITableFactory factory = new TxtTableFactory(Host.ResolveAssemblyReference("$(ProjectDir)Data"));
+	var tables = factory.LoadTables();
+	var manager = Manager.Create(this.Host, GenerationEnvironment);
+	foreach(Table table in tables)
+    {
+		manager.StartNewFile(table.TableName + ".cs");
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Dothan.ExportData
+{
+<# 
+		if(!string.IsNullOrEmpty(table.TableComment))
+        {
+ #>
+	/// <summary>
+    /// <#= table.TableComment #>
+    /// </summary>
+ <# 
+        }
+ #>
+	public class <#= table.TableName #>
+	{
+		#region 数据库表字段常量
+
+<# 
+		foreach(Column item in table.Columns)
+		{
+#>
+		/// <summary>
+        /// <#= item.ToString() #>
+        /// </summary>
+        public const string C_<#= item.FieldName #> = "<#= item.FieldName #>";
+
+<#
+		}
+#>
+		#endregion
+
+		#region 数据库表字段对应属性
+		
+<# 
+		foreach(Column item in table.Columns)
+		{
+#>
+		/// <summary>
+        /// <#= item.ToString() #>
+        /// </summary>
+        public <#= item.ObjType #> <#= item.ObjName #> { get; set; }
+<#
+		}		
+#>
+
+		#endregion
+	}
+}
+<#
+		manager.EndBlock();
+	}
+	manager.Process(true);
+ #>

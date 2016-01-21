@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SettleModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SettleModelStoreContainer">
+          <EntitySet Name="tb_money_store" EntityType="SettleModel.Store.tb_money_store" store:Type="Tables" Schema="settle" />
+          <EntitySet Name="tb_project_info" EntityType="SettleModel.Store.tb_project_info" store:Type="Tables" Schema="settle" />
+          <EntitySet Name="tb_security_store_acc" EntityType="SettleModel.Store.tb_security_store_acc" store:Type="Tables" Schema="settle" />
+        </EntityContainer>
+        <EntityType Name="tb_money_store">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="item_id" Type="bigint" />
+          <Property Name="xmdm" Type="int" Nullable="false" />
+          <Property Name="zcdy" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="zhdm" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="policy_id" Type="int" />
+          <Property Name="order_id" Type="int" />
+          <Property Name="trade_id" Type="int" />
+          <Property Name="security_id" Type="int" />
+          <Property Name="money" Type="double" />
+          <Property Name="date_str" Type="char" MaxLength="8" />
+          <Property Name="froze" Type="int" />
+          <Property Name="froze_date" Type="char" MaxLength="8" />
+          <Property Name="melt_date" Type="char" MaxLength="8" />
+          <Property Name="froze_reason" Type="int" />
+          <Property Name="froze_source" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_project_info">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="xmdm" Type="int" Nullable="false" />
+          <Property Name="project_name" Type="varchar" MaxLength="20" />
+          <Property Name="zcdy" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="zhdm" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tb_security_store_acc">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="xmdm" Type="int" Nullable="false" />
+          <Property Name="zcdy" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="zhdm" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="policy_id" Type="int" />
+          <Property Name="date_str" Type="char" MaxLength="8" />
+          <Property Name="security_id" Type="varchar" MaxLength="20" />
+          <Property Name="long_num" Type="double" />
+          <Property Name="short_num" Type="double" />
+          <Property Name="froze_num" Type="double" />
+          <Property Name="hedge_num" Type="double" />
+          <Property Name="long_balance" Type="double" />
+          <Property Name="short_balance" Type="double" />
+          <Property Name="froze_balance" Type="double" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SettleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SettleEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_project_info" EntityType="SettleModel.tb_project_info" />
+          <EntitySet Name="tb_security_store_acc" EntityType="SettleModel.tb_security_store_acc" />
+          <EntitySet Name="tb_money_store" EntityType="SettleModel.tb_money_store" />
+        </EntityContainer>
+        <EntityType Name="tb_project_info">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xmdm" Type="Int32" Nullable="false" />
+          <Property Name="project_name" Type="String" />
+          <Property Name="zcdy" Type="String" Nullable="false" />
+          <Property Name="zhdm" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_security_store_acc">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="xmdm" Type="Int32" Nullable="false" />
+          <Property Name="zcdy" Type="String" Nullable="false" />
+          <Property Name="zhdm" Type="String" Nullable="false" />
+          <Property Name="policy_id" Type="Int32" Nullable="false" />
+          <Property Name="date_str" Type="String" />
+          <Property Name="security_id" Type="String" />
+          <Property Name="long_num" Type="Double" />
+          <Property Name="short_num" Type="Double" />
+          <Property Name="froze_num" Type="Double" />
+          <Property Name="hedge_num" Type="Double" />
+          <Property Name="long_balance" Type="Double" />
+          <Property Name="short_balance" Type="Double" />
+          <Property Name="froze_balance" Type="Double" />
+        </EntityType>
+        <EntityType Name="tb_money_store">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Type="Int64" Name="idx" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="item_id" />
+          <Property Type="Int32" Name="xmdm" Nullable="false" />
+          <Property Type="String" Name="zcdy" Nullable="false" />
+          <Property Type="String" Name="zhdm" Nullable="false" />
+          <Property Type="Int32" Name="policy_id" />
+          <Property Type="Int32" Name="order_id" />
+          <Property Type="Int32" Name="trade_id" />
+          <Property Type="Int32" Name="security_id" />
+          <Property Type="Double" Name="money" />
+          <Property Type="String" Name="date_str" />
+          <Property Type="Int32" Name="froze" />
+          <Property Type="String" Name="froze_date" />
+          <Property Type="String" Name="melt_date" />
+          <Property Type="Int32" Name="froze_reason" />
+          <Property Type="String" Name="froze_source" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SettleModelStoreContainer" CdmEntityContainer="SettleEntities">
+          <EntitySetMapping Name="tb_project_info"><EntityTypeMapping TypeName="SettleModel.tb_project_info"><MappingFragment StoreEntitySet="tb_project_info">
+            <ScalarProperty Name="idx" ColumnName="idx" />
+            <ScalarProperty Name="xmdm" ColumnName="xmdm" />
+            <ScalarProperty Name="project_name" ColumnName="project_name" />
+            <ScalarProperty Name="zcdy" ColumnName="zcdy" />
+            <ScalarProperty Name="zhdm" ColumnName="zhdm" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tb_security_store_acc"><EntityTypeMapping TypeName="SettleModel.tb_security_store_acc"><MappingFragment StoreEntitySet="tb_security_store_acc">
+            <ScalarProperty Name="idx" ColumnName="idx" />
+            <ScalarProperty Name="xmdm" ColumnName="xmdm" />
+            <ScalarProperty Name="zcdy" ColumnName="zcdy" />
+            <ScalarProperty Name="zhdm" ColumnName="zhdm" />
+            <ScalarProperty Name="policy_id" ColumnName="policy_id" />
+            <ScalarProperty Name="date_str" ColumnName="date_str" />
+            <ScalarProperty Name="security_id" ColumnName="security_id" />
+            <ScalarProperty Name="long_num" ColumnName="long_num" />
+            <ScalarProperty Name="short_num" ColumnName="short_num" />
+            <ScalarProperty Name="froze_num" ColumnName="froze_num" />
+            <ScalarProperty Name="hedge_num" ColumnName="hedge_num" />
+            <ScalarProperty Name="long_balance" ColumnName="long_balance" />
+            <ScalarProperty Name="short_balance" ColumnName="short_balance" />
+            <ScalarProperty Name="froze_balance" ColumnName="froze_balance" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tb_money_store">
+            <EntityTypeMapping TypeName="SettleModel.tb_money_store">
+              <MappingFragment StoreEntitySet="tb_money_store">
+                <ScalarProperty Name="froze_source" ColumnName="froze_source" />
+                <ScalarProperty Name="froze_reason" ColumnName="froze_reason" />
+                <ScalarProperty Name="melt_date" ColumnName="melt_date" />
+                <ScalarProperty Name="froze_date" ColumnName="froze_date" />
+                <ScalarProperty Name="froze" ColumnName="froze" />
+                <ScalarProperty Name="date_str" ColumnName="date_str" />
+                <ScalarProperty Name="money" ColumnName="money" />
+                <ScalarProperty Name="security_id" ColumnName="security_id" />
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="policy_id" ColumnName="policy_id" />
+                <ScalarProperty Name="zhdm" ColumnName="zhdm" />
+                <ScalarProperty Name="zcdy" ColumnName="zcdy" />
+                <ScalarProperty Name="xmdm" ColumnName="xmdm" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+                <ScalarProperty Name="idx" ColumnName="idx" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SettleModel">
+        <EntityTypeShape EntityType="SettleModel.tb_project_info" Width="1.5" PointX="2.5" PointY="0.5" Height="1.9700325520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettleModel.tb_security_store_acc" Width="1.5" PointX="2.5" PointY="2.875" Height="3.6892097981770835" IsExpanded="true" />
+        <EntityTypeShape EntityType="SettleModel.tb_money_store" Width="1.5" PointX="0.5" PointY="0.5" Height="4.0712491861979165" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

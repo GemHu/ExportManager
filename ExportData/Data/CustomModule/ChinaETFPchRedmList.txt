@@ -1,0 +1,16 @@
+TableName: ChinaETFPchRedmRow
+TableComment: 中国ETF申购赎回清单项。
+PropertyNameMode: System
+
+01	|	OBJECT_ID				|	varchar(100) 	|	对象ID						|
+02	|	S_INFO_WINDCODE			|	varchar(40) 	|	Wind代码					|
+03	|	TRADE_DT				|	varchar(8) 		|	交易日期					|
+04	|	F_INFO_CASHDIF			|	numeric(20,4) 	|	现金差额(元)				|
+05	|	F_INFO_MINPRASET		|	numeric(20,4) 	|	最小申购赎回单位资产净值(元)|
+06	|	F_INFO_ESTICASH			|	numeric(20,4) 	|	预估现金部分(元)			|
+07	|	F_INFO_CASHSUBUPLIMIT	|	numeric(20,4) 	|	现金替代比例上限(%)			|
+08	|	F_INFO_MINPRUNITS		|	numeric(20,4) 	|	最小申购赎回单位(份)		|
+09	|	F_INFO_PRPERMIT			|	numeric(1) 		|	申购赎回允许情况			|
+10	|	F_INFO_CONNUM			|	numeric(20,4) 	|	标的指数成分股数量			|
+11	|	OPDATE					|	datetime 		|	操作时间					|
+12	|	OPMODE					|	varchar(1) 		|	操作模式					|	0（新记录）、1（更新/更正）、2（删除），描述对数据库需要进行的操作。对于0和1，记录内容即为最新值；对于2，所有字段内容为空。

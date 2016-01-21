@@ -1,0 +1,40 @@
+﻿TableName: OrderRow_LH
+TableComment: 量化系统中的OrderTable数据模型。
+
+01	|	xmdm			|	int			|	项目代码*
+02	|	zjdm			|	int			|	资金代码
+03	|	zmdm			|	int			|	组合代码*
+04	|	gddm			|	varchar(20)	|	股东代码
+05	|	zqdm			|	varchar(30)	|	证券代码*
+06	|	sc				|	char(1)		|	市场*	
+07	|	orderno			|	int			|	委托编号*
+08	|	cidx			|	int			|	委托标记号
+09	|	reportno		|	varchar(30)	|	申报编号
+10	|	zqlb			|	int			|	证券类别
+11	|	BS				|	char(1)		|	买卖*
+12	|	OpenOrClose		|	char(1)		|	委托类型
+13	|	OrderType		|	char(1)		|	委托类别
+14	|	OrderPr			|	float(53)	|	委托价格
+15	|	OrderNum		|	float(53)	|	委托数量
+16	|	CjNum			|	float(53)	|	成交数量*
+17	|	CjBal			|	float(53)	|	成交金额*
+18	|	mUnitnum		|	float(53)	|	乘数*
+19	|	FroseBal		|	float(53)	|	冻结资金数
+20	|	FroseStore		|	float(53)	|	冻结库存数
+21	|	FroseStoreETF	|	float(53)	|	冻结库存数
+22	|	cancelnum		|	float(53)	|	取消数量
+23	|	status			|	int			|	
+24	|	OrderTime		|	int			|	委托时间
+25	|	ReportTime		|	int			|	申报时间
+26	|	FirtCjTime		|	int			|	最早成交时间
+27	|	LastCjTime		|	int			|	最新成交时间
+28	|	CjTimeJys		|	int			|	交易所最新成交时间*
+29	|	Cancelorderno	|	int			|	取消订单编号
+30	|	DebugInfo		|	varchar(100)|	调试信息
+31	|	Oper			|	varchar(20)	|	
+32	|	CrtDate			|	datetime	|	
+33	|	CustomInfo1		|	varchar(20)	|	
+34	|	CustomInfo2		|	varchar(20)	|	
+35	|	CustomInfo3		|	varchar(20)	|	
+36	|	InstruId		|	int			|	
+37	|	PolicyId		|	int			|	策略号

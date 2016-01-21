@@ -1,0 +1,261 @@
+﻿<#@ template language="C#" debug="true" hostSpecific="true" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Data" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+
+<#+
+    public interface ITableFactory
+    {
+        List<Table> LoadTables();
+    }
+
+    public class Table
+    {
+        #region Life Cycle
+
+        public Table(string tableName)
+        {
+            this._TableName = tableName;
+        }
+
+        #endregion
+
+        #region Field
+
+        private string _TableName;
+		private string _TableComment;
+        private List<Column> _Columns;
+		private EPropertyNameMode _PropertyNameMode = EPropertyNameMode.None;
+		private EFileType _FileType = EFileType.Other;
+        
+        #endregion
+
+        /// <summary>
+        /// 数据表名称；
+        /// </summary>
+        public string TableName 
+        { 
+            get { return this._TableName; } 
+			set { if (!string.IsNullOrEmpty(value)) this._TableName = value.Trim();}
+        }
+
+		public string TableComment
+        {
+			get { return this._TableComment;}
+			set { if (!string.IsNullOrEmpty(value)) this._TableComment = value.Trim();}
+		}
+
+        /// <summary>
+        /// 数据表字段列表；
+        /// </summary>
+        public List<Column> Columns
+        {
+            get { return this._Columns; }
+        }
+
+		public EPropertyNameMode PropertyNameMode
+        {
+			get { return this._PropertyNameMode; }
+			set { this._PropertyNameMode = value; }
+        }
+
+		public EFileType FileType
+        {
+			get { return this._FileType; }
+			set { this._FileType = value; }
+        }
+
+        public void AddColumn(Column column)
+        {
+            if (this._Columns == null)
+            {
+                this._Columns = new List<Column>();
+            }
+			
+			column.Table = this;
+            this.Columns.Add(column);
+			column.Index = this.Columns.Count;
+        }
+
+        public void AddColumn(string fieldName, string fieldType, string comment, string comment1)
+        {
+            this.AddColumn(new Column(fieldName, fieldType, comment, comment1));
+        }
+    }
+
+    public class Column
+    {
+        #region Life Cycle
+
+        public Column()
+        {
+
+        }
+
+        public Column(string fieldName, string fieldType, string comment, string comment1)
+        {
+            this.FieldName = fieldName;
+            this.FieldType = fieldType;
+            this.Comment = comment;
+            this.Comment1 = comment1;
+        }
+
+        #endregion
+
+        #region Field
+
+		private Table _Table;
+
+        private int _Index;
+        private string _FieldName;
+        private string _FieldType;
+        private string _Comment;
+        private string _Comment1;
+
+        #endregion
+
+		public Table Table
+        {
+			get { return this._Table; }
+			set { this._Table = value; }
+        }
+
+        /// <summary>
+        /// 数据库表字段索引号；
+        /// </summary>
+        public int Index
+        {
+            get { return this._Index; }
+            set { this._Index = value; }
+        }
+        /// <summary>
+        /// 数据库表字段名称；
+        /// </summary>
+        public string FieldName
+        {
+            get { return this._FieldName; }
+            set { if (value != null) this._FieldName = value.Trim(); }
+        }
+        /// <summary>
+        /// 数据库表字段名称对应的实例名称；
+        /// </summary>
+        public virtual string ObjName
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.FieldName))
+                {
+                    throw new Exception("数据表字段名称不能为空！");
+                }
+
+				if (this.Table == null)
+					return this.FieldName;
+
+				if (this.Table.PropertyNameMode == EPropertyNameMode.System)
+					return System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(this.FieldName);
+				else if (this.Table.PropertyNameMode == EPropertyNameMode.ToUpper)
+					return this.FieldName.ToUpper();
+				else if (this.Table.PropertyNameMode == EPropertyNameMode.ToLower)
+					return this.FieldName.ToLower();
+				else
+					return this.FieldName;
+            }
+        }
+
+        /// <summary>
+        /// 数据库表字段类型；
+        /// </summary>
+        public string FieldType
+        {
+            get { return this._FieldType; }
+            set { if (value != null) this._FieldType = value.Trim(); }
+        }
+        /// <summary>
+        /// 数据库表字段类型所对应的实例类型；
+        /// </summary>
+        public string ObjType
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.FieldType))
+                {
+                    throw new Exception("数据表字段类型不能为空！");
+                }
+
+                string type;
+                if (this.FieldType.StartsWith("int", StringComparison.OrdinalIgnoreCase))
+                    type = "int";
+                else if (this.FieldType.StartsWith("char(1)", StringComparison.OrdinalIgnoreCase))
+                    type = "char";
+                else if (this.FieldType.StartsWith("CHAR(1 BYTE)", StringComparison.OrdinalIgnoreCase))
+                    type = "char";
+				else if (this.FieldType.StartsWith("Character(1)", StringComparison.OrdinalIgnoreCase))
+					type = "char";
+				else if (this.FieldType.StartsWith("c(1)", StringComparison.OrdinalIgnoreCase))
+					type = "char";
+                else if (this.FieldType.StartsWith("bigint", StringComparison.OrdinalIgnoreCase))
+                    type = "long";
+                else if (this.FieldType.StartsWith("float", StringComparison.OrdinalIgnoreCase))
+                    type = "double";
+                else if (this.FieldType.StartsWith("double", StringComparison.OrdinalIgnoreCase))
+                    type = "double";
+                else if (this.FieldType.StartsWith("datetime", StringComparison.OrdinalIgnoreCase))
+                    type = "DateTime?";
+                else if (this.FieldType.StartsWith("num", StringComparison.OrdinalIgnoreCase) && (this.FieldType.Split(new char[] { ',' }).Length == 2))
+                    type = "double";
+				else if (this.FieldType.StartsWith("n(", StringComparison.OrdinalIgnoreCase))
+                {
+					if (this.FieldType.Split(',').Length == 1)
+						type = "int";
+					else
+						type = "double";
+                }
+                else
+                    type = "string";
+
+                return type;
+            }
+        }
+
+        /// <summary>
+        /// 数据库表字段注释；
+        /// </summary>
+        public string Comment
+        {
+            get { return this._Comment; }
+            set { if (value != null) this._Comment = value.Trim(); }
+        }
+        /// <summary>
+        /// 数据库表字段附件注释；
+        /// </summary>
+        public string Comment1
+        {
+            get { return this._Comment1; }
+            set { if (value != null) this._Comment1 = value.Trim(); }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}、{1}; 字段类型 = {2}; {3}", this.Index.ToString("D2"), this.Comment, this.FieldType, string.IsNullOrEmpty(this.Comment1) ? string.Empty : this.Comment1 + ";");
+        }
+    }
+	
+	public enum EPropertyNameMode
+    {
+		None,
+		System,
+		ToUpper, 
+		ToLower
+    }
+	
+	public enum EFileType
+    {
+		SH, 
+		SZ, 
+		Other
+    }
+
+#>

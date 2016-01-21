@@ -1,0 +1,48 @@
+1	SCDM	Character	2		市场代码
+2	JLLX	Character	3		记录类型
+3	JYFS	Character	3		交易方式
+4	JSFS	Character	3		交收方式
+5	YWLX	Character	3		业务类型
+6	QSBZ	Character	3		清算标志
+7	GHLX	Character	3		过户类型
+8	JSBH	Character	16		交收编号
+9	CJBH	Character	16	?999999999999999	成交编号
+10	SQBH	Character	16		申请编号
+11	WTBH	Character	16		委托编号
+12	JYRQ	Character	8		交易日期
+13	QSRQ	Character	8		清算日期
+14	JSRQ	Character	8		交收日期
+15	QTRQ	Character	8		其它日期
+16	WTSJ	Character	6		委托时间
+17	CJSJ	Character	6		成交时间
+18	XWH1	Character	5		业务单元1
+19	XWH2	Character	5		业务单元2
+20	XWHY	Character	8		业务单元1所属结算参与人的清算编号
+21	JSHY	Character	8		结算参与人的清算编号
+22	TGHY	Character	8		托管银行的清算编号
+23	ZQZH	Character	10		证券账号
+24	ZQDM1	Character	6		证券代码1
+25	ZQDM2	Character	6		证券代码2
+26	ZQLB	Character	2		证券类别
+27	LTLX	Character	1		流通类型
+28	QYLB	Character	2		权益类别
+29	GPNF	Character	4		挂牌年份
+30	MMBZ	Character	1		买卖标志
+31	SL	Character	16	?999999999999999	交收数量
+32	CJSL	Character	16	?999999999999999	成交数量
+33	ZJZH	Character	25		资金账号
+34	BZ	Character	3		币种
+35	JG1	Character	17	?999999.999999999	价格1
+36	JG2	Character	17	?999999.999999999	价格2
+37	QSJE	Character	19	?999999999999999.99	清算金额
+38	YHS	Character	17	?9999999999999.99	印花税
+39	JSF	Character	17	?9999999999999.99	经手费
+40	GHF	Character	17	?9999999999999.99	过户费
+41	ZGF	Character	17	?9999999999999.99	证管费
+42	SXF	Character	17	?9999999999999.99	手续费
+43	QTJE1	Character	19	?999999999999999.99	其它金额1
+44	QTJE2	Character	19	?999999999999999.99	其它金额2
+45	QTJE3	Character	19	?999999999999999.99	其它金额3
+46	SJSF	Character	19	?999999999999999.99	实际收付
+47	JGDM	Character	4		结果代码
+48	FJSM	Character	40		附加说明

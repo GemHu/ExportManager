@@ -1,0 +1,139 @@
+﻿<#@ include file="TableTemplate.ttinclude" #>
+<#@ import namespace="System.IO" #>
+
+<#+ 
+	
+    public class TxtTableFactory : ITableFactory
+    {
+        public TxtTableFactory(string folder)
+        {
+            this._Folder = folder;
+        }
+
+        private string _Folder;
+
+        public string Folder
+        {
+            get { return this._Folder; }
+        }
+
+        public List<Table> LoadTables()
+        {
+            if (!Directory.Exists(Folder))
+                throw new Exception("目标文件夹不存在！Path = " + Folder);
+
+			string dbf_sh = Path.Combine(this.Folder, "DBFModule_SH");
+			string dbf_sz = Path.Combine(this.Folder, "DBFModule_SZ");
+			string custom = Path.Combine(this.Folder, "CustomModule");
+
+			Dictionary<string, Table> fileList = new Dictionary<string, Table>();
+			// SH
+			if (Directory.Exists(dbf_sh))
+            {
+				foreach(string file in Directory.GetFiles(dbf_sh))
+                {
+					Table table = new Table(Path.GetFileNameWithoutExtension(file));
+					table.FileType = EFileType.SH;
+					fileList[file] = table;
+				}
+			}
+
+			// SZ
+			if (Directory.Exists(dbf_sz))
+            {
+				foreach(string file in Directory.GetFiles(dbf_sz))
+                {
+					Table table = new Table(Path.GetFileNameWithoutExtension(file));
+					table.FileType = EFileType.SZ;
+					fileList[file] = table;
+				}
+			}
+
+			// Custom
+			if (Directory.Exists(custom))
+            {
+				foreach(string file in Directory.GetFiles(custom))
+                {
+					Table table = new Table(Path.GetFileNameWithoutExtension(file));
+					table.FileType = EFileType.Other;
+					fileList[file] = table;
+				}
+			}
+
+			// 解析文件
+            foreach (KeyValuePair<string, Table> item in fileList)
+            {
+                Table table = item.Value;
+                using (StreamReader reader = new StreamReader(item.Key))
+                {
+                    while (true)
+                    {
+                        string line = reader.ReadLine();
+                        if (line == null)
+                            break;
+						if (string.IsNullOrEmpty(line) || line.Trim().StartsWith("//"))
+							continue;
+
+						if (line.StartsWith("TableName:"))
+                        {
+							table.TableName = line.Substring("TableName:".Length);
+                        }
+						else if (line.StartsWith("TableComment:"))
+                        {
+							table.TableComment = line.Substring("TableComment:".Length);
+                        }
+						else if (line.StartsWith("PropertyNameMode:"))
+                        {
+							string mode = line.Substring("PropertyNameMode:".Length).Trim();
+							if (mode.Equals(EPropertyNameMode.System.ToString()))
+								table.PropertyNameMode = EPropertyNameMode.System;
+							else if (mode.Equals(EPropertyNameMode.ToUpper.ToString()))
+								table.PropertyNameMode = EPropertyNameMode.ToUpper;
+							else if (mode.Equals(EPropertyNameMode.ToLower.ToString()))
+								table.PropertyNameMode = EPropertyNameMode.ToLower;
+							else
+								table.PropertyNameMode = EPropertyNameMode.None;
+						}
+						else	// 解析数据表字段
+                        {
+							Column column = null;
+							if (table.FileType == EFileType.SH)
+								column = this.ParseColumn_SH(line);
+							else if (table.FileType == EFileType.SZ)
+								column = this.ParseColumn_SZ(line);
+							else
+								column = this.ParseColumn(line);
+
+							if (column != null)
+								table.AddColumn(column);
+						}
+                    }
+                }
+            }
+
+            return fileList.Values.ToList();
+        }
+
+        public Column ParseColumn_SH(string line)
+        {
+            string[] items = line.Split(new char[] { ' ', '\t' });
+
+            return new Column(items[1], string.Format("{0}({1})", items[2], items[3]), items[items.Length - 1], string.Empty);
+        }
+
+        public Column ParseColumn_SZ(string line)
+        {
+            string[] items = line.Split(new char[] { ' ', '\t' });
+
+            return new Column(items[1], string.Format("{0}({1})", items[3], items[4]), items[2], items.Length == 6 ? "备注：" + items[5].Trim() : string.Empty);
+        }
+
+        public Column ParseColumn(string line)
+        {
+            string[] items = line.Split('|');
+
+            return new Column(items[1], items[2], items[3], (items.Length > 4 ? items[4] : string.Empty));
+        }
+    }
+
+ #>

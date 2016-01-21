@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABF2F144-08E5-4837-9D63-33FF050EE8C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dothan.ExportData</RootNamespace>
+    <AssemblyName>ExportData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SettleSysCoding">
+      <HintPath>..\lib\SettleSysCoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDatas\DbfFileInfo.cs" />
+    <Compile Include="BaseDatas\DbfImportItem.cs" />
+    <Compile Include="BaseDatas\ESecurityType.cs" />
+    <Compile Include="BaseDatas\ImportItem.cs" />
+    <Compile Include="BaseDatas\ImportItem.DBHelper.cs" />
+    <Compile Include="BaseDatas\MysqlImportItem.cs" />
+    <Compile Include="BaseDatas\OracleImportItem.cs" />
+    <Compile Include="BaseDatas\ProcessInfo.cs" />
+    <Compile Include="BaseDatas\SqlImportItem.cs" />
+    <Compile Include="BaseDatas\SqlServerImportItem.cs" />
+    <Compile Include="DbfDatabase\CILService.cs" />
+    <Compile Include="DbfDatabase\JSMXService_SH.cs" />
+    <Compile Include="DbfDatabase\JSMXService_SZ.cs" />
+    <Compile Include="LHDatabase\OrderRowService_LH.cs" />
+    <Compile Include="LHDatabase\ProjectInfoService_LH.cs" />
+    <Compile Include="Manager\Log4netLog.cs" />
+    <Compile Include="Manager\DBFManager.cs" />
+    <Compile Include="Manager\DbfQueryManager.cs" />
+    <Compile Include="Manager\ExportManager.cs" />
+    <Compile Include="Manager\ExportManager.Event.cs" />
+    <Compile Include="Manager\ExportManager.Export.cs" />
+    <Compile Include="Manager\MyLog.cs" />
+    <Compile Include="Manager\OutputData.cs" />
+    <Compile Include="O32Database\TradeInfo_O32Service.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettleDatabase\ImportRecordTable.cs" />
+    <Compile Include="SettleDatabase\MarketTable.cs" />
+    <Compile Include="SettleDatabase\MoneyStoreTable.cs" />
+    <Compile Include="SettleDatabase\OrderTable.cs" />
+    <Compile Include="SettleDatabase\SecurityStoreAccTable.cs" />
+    <Compile Include="SettleDatabase\TradeTable.cs" />
+    <Compile Include="T4\AShareEODPriceRow.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\BondFuturesEODPriceRow.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ChinaETFPchRedmRow.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\CilRow.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\CommodityFuturesEODPriceRow.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\CustomModule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\IndexFuturesEODPriceRow.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\JsmxRow_SH.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\JsmxRow_SZ.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\OrderRow_LH.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\ProjectInfo_LH.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\TradeInfo_O32.cs">
+      <DependentUpon>CustomModule.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WindDatabase\AShareEODPricesTable.cs" />
+    <Compile Include="WindDatabase\BondFuturesEODPricesTable.cs" />
+    <Compile Include="WindDatabase\ChinaETFPchRedmListTable.cs" />
+    <Compile Include="WindDatabase\CommodityFuturesEODPricesTable.cs" />
+    <Compile Include="WindDatabase\IndexFuturesEODPricesTable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DzHelpers\DzHelpers.csproj">
+      <Project>{7F6BF401-DCF1-4E33-9BAB-312C3B1A0A83}</Project>
+      <Name>DzHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="T4\CustomModule.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CustomModule.cs</LastGenOutput>
+    </None>
+    <None Include="T4\MultipleOutputHelper.ttinclude" />
+    <None Include="T4\TableTemplate.ttinclude" />
+    <None Include="T4\TxtTableFactory.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\CustomModule\AShareEODPriceRow.txt" />
+    <Content Include="Data\CustomModule\BondFuturesEODPrices.txt" />
+    <Content Include="Data\CustomModule\ChinaETFPchRedmList.txt" />
+    <Content Include="Data\CustomModule\CommodityFuturesEODPrices.txt" />
+    <Content Include="Data\CustomModule\IndexFuturesEODPrices.txt" />
+    <Content Include="Data\CustomModule\LH_OrderRow.txt" />
+    <Content Include="Data\CustomModule\ProjectInfo_LH.txt" />
+    <Content Include="Data\CustomModule\TradeRow_O32.txt" />
+    <Content Include="Data\DBFModule_SH\JSMX_SH.txt" />
+    <Content Include="Data\DBFModule_SZ\CIL.txt" />
+    <Content Include="Data\DBFModule_SZ\JSMX_SZ.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

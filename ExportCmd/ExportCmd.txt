@@ -1,0 +1,21 @@
+﻿ExportCmd工具命令行参数：
+[/f 源数据名称]		：'/f' 代表from，表示导出的源数据表名称，可以不指定，表示所有导出源数据，也可以用"/f all"表示从所有数据源中查找；
+[/t 目标数据名称]	：'/t' 代表to，表示导入的目标数据名称，可以不指定，表示所有导入目标数据，也可以用"/t all"表示将给定的数据分别导入到对应的目标数据表中； 
+[/d 日期]			：'/d' 代表date，表示需要采集制定日期的数据，日期格式为：yyyyMMdd，yyyy/MM/dd，yyyy-MM-dd三种格式；
+
+注意：
+	1、日期为必填选项；
+	2、如果不添加任何参数，则表示直接到开命令行客户端，然后在命令行客户端中进行相关操作；
+
+eg:
+ExportCmd.exe /d 20151230;						// 将2015年12月30号的所有数据导入到对应的数据库中
+ExportCmd.exe /d 2015/12/30;
+ExportCmd.exe /d 2015-12-30;
+
+ExportCmd.exe /f tb_OrderTable /d 20151230;		// 将2015年12月30日的tb_OrderTable数据表中的数据导入到对应的数据库中；
+ExportCmd.exe /t order /d 20151230;				// 只采集2015年12月30日order数据；
+ExportCmd.exe /f all /t trade /d 20151230;		// 只采集2015年12月30日的trade数据；
+
+批处理语句：
+eg:
+start "" "C:\Program Files (x86)\qlzg\DAManager\ExportCmd.exe" /f tb_OrderTable /d 20151230

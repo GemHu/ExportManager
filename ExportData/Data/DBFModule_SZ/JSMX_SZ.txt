@@ -1,0 +1,51 @@
+TableName: JsmxRow_SZ
+TableComment: 深交所返回的结算明细数据接口。
+
+1	MXJSZH	结算账号	C	6
+2	MXBFZH	备付金账户	C	25
+3	MXSJLX	数据类型	C	2
+4	MXYWLB	业务类别	C	4
+5	MXZQDM	证券代码	C	8
+6	MXJYDY	交易单元	C	6
+7	MXTGDY	托管单元	C	6
+8	MXZQZH	证券账户代码	C	20
+9	MXDDBH	客户订单编号/申请单号	C	24
+10	MXYYB	营业部代码	C	4
+11	MXZXBH	执行编号	C	16
+12	MXYWLSH	业务流水号	C	16
+13	MXCJSL	成交数量	N	15,2
+14	MXQSSL	清算数量	N	15,2
+15	MXCJJG	成交价格	N	13,4
+16	MXQSJG	清算价格	N	18,9
+17	MXXYJY	信用交易标识	C	1
+18	MXPCBS	平仓标识	C	1
+19	MXZQLB	证券类别	C	2
+20	MXZQZL	证券子类别	C	2
+21	MXGFXZ	股份性质	C	2
+22	MXJSFS	交收方式	C	1
+23	MXHBDH	货币代号	C	3
+24	MXQSBJ	清算本金	N	17,2
+25	MXYHS	印花税		N	12,2
+26	MXJYJSF	交易经手费	N	12,2
+27	MXJGGF	监管规费	N	12,2
+28	MXGHF	过户费	N	12,2
+29	MXJSF	结算费	N	12,2
+30	MXSXF	手续费	N	12,2
+31	MXQSYJ	结算参与人佣金	N	12,2	结算参与人系统自用
+32	MXQTFY	其他费用	N	12,2
+33	MXZJJE	资金金额	N	17,2
+34	MXSFJE	收付净额	N	18,2
+35	MXCJRQ	成交日期	C	8	CCYYMMDD
+36	MXQSRQ	清算日期	C	8	CCYYMMDD
+37	MXJSRQ	交收日期	C	8	CCYYMMDD
+38	MXFSRQ	发送日期	C	8	CCYYMMDD
+39	MXQTRQ	其它日期	C	8	CCYYMMDD
+40	MXSCDM	市场代码	C	2	保留字段
+41	MXJYFS	交易方式	C	2	
+42	MXZQDM2	证券代码2	C	8
+43	MXTGDY2	托管单元2	C	6
+44	MXDDBH2	订单编号2	C	16	保留字段
+45	MXCWDH	错误代号	C	4
+46	MXPPHM	匹配号码	C	10	备用
+47	MXFJSM	附加说明	C	30
+48	MXBYBZ	备用标志	C	1	参与人系统自用

@@ -1,0 +1,14 @@
+01	|	idx				|	bigint not null			|	主键			|
+02	|	xmdm			|	int not null			|	项目代码		|
+03	|	zcdy			|	varchar(20) not null	|	资产单元		|
+04	|	zhdm			|	varchar(20) not null	|	组合代码		|
+05	|	policy_id		|	int not null			|	策略编号		|
+06	|	date_str		|	char(8)					|	汇总日			|
+07	|	security_id		|	varchar(20)				|	证券代码		|
+08	|	long_num		|	double					|	方向			|	0=多头，1=空头
+09	|	short_num		|	double					|	数量			|
+10	|	froze_num		|	double					|					|
+11	|	hedge_num		|	double					|					|
+12	|	long_balance	|	double					|					|
+13	|	short_balance	|	double					|	总金额			|
+14	|	froze_balance	|	double					|					|

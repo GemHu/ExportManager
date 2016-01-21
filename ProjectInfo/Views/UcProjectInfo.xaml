@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Dothan.ProjectInfo.UcProjectInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dothan.ProjectInfo"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="Style_StackPanel_TreeViewItem" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Margin" Value="5,3,5,3" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+        <Style x:Key="Style_Image_TreeViewItem" TargetType="Image">
+            <Setter Property="Width" Value="16" />
+            <Setter Property="Height" Value="16" />
+        </Style>
+        <Style x:Key="Style_TextBlock_TreeViewItem" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5,0,0,0" />
+        </Style>
+        
+        <HierarchicalDataTemplate DataType="{x:Type local:ProjectCode}" ItemsSource="{Binding Path=Children}">
+            <StackPanel Style="{StaticResource Style_StackPanel_TreeViewItem}" >
+                <Image 
+                    Style="{StaticResource Style_Image_TreeViewItem}"
+                    Source="pack://application:,,,/ProjectInfo;component/Images/Icon_ProjectInfo_XMDM.png" />
+                <TextBlock 
+                    Style="{StaticResource Style_TextBlock_TreeViewItem}"
+                    Text="{Binding Path=ShownName}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate DataType="{x:Type local:AssertsUnit}" ItemsSource="{Binding Path=Children}" >
+            <StackPanel Style="{StaticResource Style_StackPanel_TreeViewItem}">
+                <Image 
+                    Style="{StaticResource Style_Image_TreeViewItem}"
+                    Source="pack://application:,,,/ProjectInfo;component/Images/Icon_ProjectInfo_ZCDY.png" />
+                <TextBlock 
+                    Style="{StaticResource Style_TextBlock_TreeViewItem}"
+                    Text="{Binding Path=Zcdy}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate DataType="{x:Type local:CombinedCode}">
+            <StackPanel Style="{StaticResource Style_StackPanel_TreeViewItem}">
+                <Image 
+                    Style="{StaticResource Style_Image_TreeViewItem}"
+                    Source="pack://application:,,,/ProjectInfo;component/Images/Icon_ProjectInfo_ZHDM.png" />
+                <TextBlock 
+                    Style="{StaticResource Style_TextBlock_TreeViewItem}"
+                    Text="{Binding Path=Zhdm}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <TreeView ItemsSource="{Binding Path=TheLibrary.Children}" MouseDoubleClick="TreeView_MouseDoubleClick" SelectedItemChanged="TreeView_SelectedItemChanged">
+        </TreeView>
+    </Grid>
+</UserControl>

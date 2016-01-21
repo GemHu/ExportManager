@@ -1,0 +1,24 @@
+MultiLanguage
+SoftDogInstdrv
+*.suo
+*.log
+*.bak
+*.cache
+*.cookie
+Debug*/
+Release*/
+*Debug/
+*Release/
+debug*/
+release*/
+*debug/
+*release/
+*_URelease*/
+*Unicode Release*/
+*UnicodeRelease*/
+FormalRelease/
+formalrelease/
+bin/
+*.sdf
+obj/
+ODTwithODAC1120320_32bit.zip
