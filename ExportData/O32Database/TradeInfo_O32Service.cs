@@ -438,22 +438,21 @@ namespace Dothan.ExportData
             }
         }
 
+        /// <summary>
+        /// 获取多头空头状态，0：表示多头，1：表示空头；
+        /// </summary>
         private int GetSideState(TradeInfo_O32 row)
         {
-            switch (row.C_MARKET_NO)
+            switch (row.C_ENTRUST_DIRECTION)
             {
+                case 'X':   // 卖出开仓，看跌
+                case 'Y':   // 买入平仓，看跌
+                    return 1;
+                case 'V':   // 买入开仓，看涨
+                case 'W':   // 卖出平仓，看涨
+                    return 0;
                 default:
-                case '1':
-                case '2':
-                    if (row.VC_REPORT_DIRECTION == "B" || row.VC_REPORT_DIRECTION == "0B")
-                        return 1;
-                    else
-                        return 0;
-                case '7':
-                    if (row.C_ENTRUST_DIRECTION == 'V' || row.C_ENTRUST_DIRECTION == 'W')
-                        return 0;   // 买入开仓、卖出平仓，看涨；
-                    else
-                        return 1;   // 买入平仓、卖出开仓，看跌；
+                    return 0;
             }
         }
 

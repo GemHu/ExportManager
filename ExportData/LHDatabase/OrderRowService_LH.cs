@@ -333,7 +333,7 @@ namespace Dothan.ExportData
         }
 
         /// <summary>
-        /// 获取多头空头状态。
+        /// 获取多头空头状态，0：表示多头，1：表示空头；
         /// </summary>
         protected int GetSideState(OrderRow_LH order, int defaultValue = 0)
         {
