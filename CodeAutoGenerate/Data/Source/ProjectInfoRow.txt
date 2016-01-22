@@ -1,5 +1,0 @@
-01	|	idx				|	bigint not null			|	主键		|
-02	|	xmdm			|	int not null			|	项目代码	|
-03	|	project_name	|	varchar(20)				|	项目名称	|
-04	|	zcdy			|	varchar(20) not null	|	资产单元	|
-05	|	zhdm			|	varchar(20) not null	|	组合代码	|

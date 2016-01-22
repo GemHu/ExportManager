@@ -1,0 +1,13 @@
+1、lib文件夹：		项目中所用到的动态库文件以及相关驱动文件；
+2、Ribbon：			微软Ribbon驱动（Office2007界面效果，只针对开发人员）；
+3、DzControl：		一些公共的自定义控件；
+4、DzHelper：		一些公共的工具类；
+
+5、ExportData：		数据采集工具类库；
+6、ExportCmd：		数据采集命令行客户端，可以通过批处理文件来进行数据的导入操作；
+7、ExportWindow：	数据采集工具Window窗口客户端；
+8、Installer：		数据采集工具安装包工程；
+
+9、ProjectInfo：	信息查询工具类库；
+10、DataQuery：		项目代码，Money等信息查询工具；
+11、QuerySetup：	信息查询工具安装包；
